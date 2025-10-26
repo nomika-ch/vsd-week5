@@ -145,3 +145,18 @@ openroad -help
 <img width="1357" height="649" alt="yosys_sr" src="https://github.com/user-attachments/assets/c0ed4558-4049-412a-a1ca-bad437b9c01f" />
 <img width="1357" height="649" alt="source_sr" src="https://github.com/user-attachments/assets/eddd0103-b81b-46b5-a641-60057c2b6c63" />
 <img width="1358" height="654" alt="openroad_sr" src="https://github.com/user-attachments/assets/1bf30098-0ccc-4bcb-8ba7-c0e07f7fe52d" />
+
+
+### 5. Run the OpenROAD FLow
+
+```
+
+cd flow
+make
+
+```
+
+When I gave make i got and error for the path of yosys and OpenROAD
+in scripts directory in flow directory i have changed the settings.mk file where i got the path by giving the command "echo $YOSYS_EXE
+which yosys
+"
