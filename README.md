@@ -133,6 +133,9 @@ sudo make install
 
 ```
 
+<img width="1355" height="654" alt="packages" src="https://github.com/user-attachments/assets/9c359126-7385-4b28-a231-acb55c5bc62d" />
+
+
 ### 4. Verify Installation
 
 ```bash
@@ -145,6 +148,8 @@ openroad -help
 <img width="1357" height="649" alt="yosys_sr" src="https://github.com/user-attachments/assets/c0ed4558-4049-412a-a1ca-bad437b9c01f" />
 <img width="1357" height="649" alt="source_sr" src="https://github.com/user-attachments/assets/eddd0103-b81b-46b5-a641-60057c2b6c63" />
 <img width="1358" height="654" alt="openroad_sr" src="https://github.com/user-attachments/assets/1bf30098-0ccc-4bcb-8ba7-c0e07f7fe52d" />
+<img width="1358" height="654" alt="openroad_version" src="https://github.com/user-attachments/assets/fa85957b-e781-4451-a7ee-97754829a7b2" />
+<img width="1358" height="654" alt="openroad_sr" src="https://github.com/user-attachments/assets/9e532b3a-dfff-425c-a6cc-656530dc06e6" />
 
 
 ### 5. Run the OpenROAD FLow
@@ -158,5 +163,55 @@ make
 
 When I gave make i got and error for the path of yosys and OpenROAD
 in scripts directory in flow directory i have changed the settings.mk file where i got the path by giving the command "echo $YOSYS_EXE
-which yosys
-"
+which yosys"
+
+Find the real OpenROAD binary
+
+Run this:
+```
+
+find ~/vsd/OpenROAD -type f -name openroad
+
+```
+
+<img width="1358" height="654" alt="flow_make" src="https://github.com/user-attachments/assets/86ea702c-fe7a-4cdf-bea5-5c712783845b" />
+
+### 6. Launch the graphical user interface (GUI) to visualize the final layout
+
+```bash
+ make gui_final
+```
+
+<img width="1358" height="654" alt="gui_final_" src="https://github.com/user-attachments/assets/d00c2f6b-a8fd-4926-a213-2884cbdec7a9" />
+<img width="1358" height="654" alt="gui_final" src="https://github.com/user-attachments/assets/3abf838f-3a1e-4a1f-9929-f4b1613e7fa0" />
+
+
+✅ Installation Complete! You can now explore the full RTL-to-GDSII flow using OpenROAD.
+
+### `ORFS Directory Structure and File formats`
+
+OpenROAD
+
+```plaintext
+├── OpenROAD            
+│   ├── docker           -> It has Docker based installation, run scripts and all saved here
+│   ├── docs             -> Documentation for OpenROAD or its flow scripts.  
+│   ├── flow             -> Files related to run RTL to GDS flow  
+|   ├── jenkins          -> It contains the regression test designed for each build update
+│   ├── tools            -> It contains all the required tools to run RTL to GDS flow
+│   ├── etc              -> Has the dependency installer script and other things
+│   ├── setup_env.sh     -> Its the source file to source all our OpenROAD rules to run the RTL to GDS flow
+```
+Inside the `flow/` Directory
+
+```plaintext
+├── flow           
+│   ├── design           -> It has built-in examples from RTL to GDS flow across different technology nodes
+│   ├── makefile         -> The automated flow runs through makefile setup
+│   ├── platform         -> It has different technology note libraries, lef files, GDS etc 
+|   ├── tutorials        
+│   ├── util            
+│   ├── scripts                 
+```
+
+![Alt Text](Images/installation7.jpg)
